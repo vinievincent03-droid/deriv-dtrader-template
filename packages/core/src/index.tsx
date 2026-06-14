@@ -5,6 +5,7 @@ import { createRoot } from 'react-dom/client';
 
 import App from 'App/app.jsx';
 import initStore from 'App/initStore';
+import { storeTokens, setEmbeddedMode } from 'Services/oauth';
 // eslint-disable-next-line
 import registerServiceWorker from 'Utils/PWA';
 
@@ -18,6 +19,13 @@ if (
 }
 
 const initApp = async () => {
+    // Read ?token= from URL before store init so client-store finds it on boot
+    const token = new URLSearchParams(window.location.search).get('token');
+    if (token) {
+        storeTokens(token);
+        setEmbeddedMode();
+    }
+
     // For simplified authentication, we don't need to pass accounts to initStore
     // The authentication will be handled by temp-auth.js and client-store.js
     // initStore is now async to perform whoami check before WebSocket connection
