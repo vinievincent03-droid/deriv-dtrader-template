@@ -20,6 +20,8 @@ type AccountHeaderProps = {
     is_virtual?: boolean;
 };
 
+const isAccountHidden = new URLSearchParams(window.location.search).has('hideAccount');
+
 const AccountHeader = observer(
     ({
         balance: balanceProp,
@@ -27,6 +29,8 @@ const AccountHeader = observer(
         is_logged_in: isLoggedInProp,
         is_virtual: isVirtualProp,
     }: AccountHeaderProps = {}) => {
+        if (isAccountHidden) return null;
+
         const { localize } = useTranslations();
         const { client, common, ui } = useStore();
         const { is_switching_account, setIsSwitchingAccount } = ui;
