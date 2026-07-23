@@ -27,8 +27,8 @@ All branding (name, colors, logos, URLs) is driven by a single config file: **`b
 ### 1. Prerequisites
 
 - **Node.js 20.x**
-- A **Deriv App ID** — register at [developers.deriv.com](https://developers.deriv.com)
-- A **Deriv OAuth Client ID** — contact Deriv to register your OAuth2 client
+- A 33UueScQJQlpJPvlqKbAR — register at [developers.deriv.com](https://developers.deriv.com)
+- A 33UueScQJQlpJPvlqKbAR — contact Deriv to register your OAuth2 client
 
 ### 2. Fork and clone
 
