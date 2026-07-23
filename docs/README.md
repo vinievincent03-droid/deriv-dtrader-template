@@ -1,6 +1,7 @@
 # dtrader-template
 
-> A white-label derivatives trading platform template. Fork it, configure your brand, and deploy — **no source code changes required**.
+> A white-label derivatives trading platform template. Fork it, configure your brand, and deploy <img width="640" height="640" alt="1000020747" src="https://github.com/user-attachments/assets/cc9e0303-d6fe-470b-997d-0ecb9e7a3a6c" />
+
 
 ![Node](https://img.shields.io/badge/node-20.x-blue.svg)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)
@@ -27,7 +28,9 @@ All branding (name, colors, logos, URLs) is driven by a single config file: **`b
 ### 1. Prerequisites
 
 - **Node.js 20.x**
-- A **Deriv App ID** — register at [developers.deriv.com](https://developers.deriv.com)
+- A git clone https://github.com/YOUR_ORG/dtrader-template.git
+cd dtrader-template
+npm run bootstrap— register at [developers.deriv.com](https://developers.deriv.com)
 - A **Deriv OAuth Client ID** — contact Deriv to register your OAuth2 client
 
 ### 2. Fork and clone
@@ -247,8 +250,9 @@ git push origin production_v20240101
 ---
 
 ## Getting API Credentials
-
-### Deriv App ID
+git clone https://github.com/YOUR_ORG/dtrader-template.git
+cd dtrader-template
+npm run bootstrap
 
 1. Go to [developers.deriv.com](https://developers.deriv.com) and log in
 2. Click **Register new application**
@@ -297,22 +301,11 @@ Everything in `brand.config.json` and `assets/brand/`:
 - Home and help centre URLs
 - App IDs (WebSocket)
 - Feature flags (`dark_mode`, `language_switcher`)
-- Translation CDN URL
-
-## What Requires Source Code Changes
-
-| Limitation                                      | Reason                                                            |
-| ----------------------------------------------- | ----------------------------------------------------------------- |
+- Translation CDN                                                        
 | `@deriv/quill-icons` icon set                   | Icons referenced by component name from this library              |
 | `@deriv-com/smartcharts-champion` chart library | Tightly coupled to the SmartChart module                          |
 | Deriv options trading API protocol              | WebSocket v3 protocol and contract types are Deriv-specific       |
-| Internal package names (`@deriv/*`)             | Monorepo workspace names — changing requires updating all imports |
-
----
-
-## Additional Documentation
-
-| Document                                                                                     | Description                                                                                                        |
+| Internal package names (`@deriv/*`)             | Monorepo workspace names — changing requires updating all imports                                                                                                      |
 | -------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
 | [WHITE_LABEL.md](./WHITE_LABEL.md)                                                           | Full white-label guide with all config fields, logo requirements, color pipeline, OAuth setup, and troubleshooting |
 | [Stylesheet Guidelines](./Stylesheet/README.md)                                              | CSS/SCSS code style guidelines                                                                                     |
@@ -322,6 +315,5 @@ Everything in `brand.config.json` and `assets/brand/`:
 
 ---
 
-## License
 
 Apache 2.0 — see [LICENSE](../LICENSE) for details.
