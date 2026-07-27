@@ -147,6 +147,29 @@ dtrader-template/
 ---
 
 ## White-Label Configuration Reference
+// Example using standard HTML5 Canvas cursor coordinates for trading charts
+canvas.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    const xCoord = event.clientX - rect.left; // Maps to Time/Ticks
+    const yCoord = event.clientY - rect.top;  // Maps to Market Price
+    
+    // Clear canvas and draw horizontal/vertical crosshair lines crossing at (xCoord, yCoord)
+    drawCrosshairLines(xCoord, yCoord);
+    renderPriceLabelOnYAxis(yCoord);
+    renderTimeLabelOnXAxis(xCoord);
+});
+// Example using standard HTML5 Canvas cursor coordinates for trading charts
+canvas.addEventListener('mousemove', (event) =
+> {
+    const rect = canvas.getBoundingClientRect();
+    const xCoord = event.clientX - rect.left; // Maps to Time/Ticks
+    const yCoord = event.clientY - rect.top;  // Maps to Market Price
+    
+    // Clear canvas and draw horizontal/vertical crosshair lines crossing at (xCoord, yCoord)
+    drawCrosshairLines(xCoord, yCoord);
+    renderPriceLabelOnYAxis(yCoord);
+    renderTimeLabelOnXAxis(xCoord);
+});
 
 All branding is controlled by `brand.config.json`. The key fields:
 
