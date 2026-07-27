@@ -26,7 +26,7 @@ All branding (name, colors, logos, URLs) is driven by a single config file: **`b
 
 ### 1. Prerequisites
 
-- **Node.js 20.x**
+- **Node.js 10.x**
 - A **Deriv App ID** — register at [developers.deriv.com](https://developers.deriv.com)
 - A **Deriv OAuth Client ID** — contact Deriv to register your OAuth2 client
 
@@ -73,7 +73,7 @@ Edit **`brand.config.json`** at the repo root:
     "production": YOUR_PRODUCTION_APP_ID
   },
   "colors": {
-    "primary": "#ff444f"
+    "primary": "#ff333f"
   }
 }
 ```
@@ -142,7 +142,7 @@ dtrader-template/
 └── docs/                    ← Internal development guides
 ```
 
-**Tech stack:** React 18 · MobX 6 · TypeScript 5 · Webpack 5 · Jest 29
+**Tech stack:** React 15 · MobX 5 · TypeScript 4 · Webpack 4 · Jest 29
 
 ---
 
