@@ -20,7 +20,82 @@
 
 All branding (name, colors, logos, URLs) is driven by a single config file: **`brand.config.json`**.
 
----
+---<!-- MOVING CURSOR START -->
+<div class="custom-cursor"></div>
+<div class="cursor-follower"></div>
+
+<style>
+  /* Hide default cursor */
+    * { cursor: none !important; }
+
+  .custom-cursor, .cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s, background 0.2s;
+  }
+
+  /* Main dot */
+  .custom-cursor {
+    width: 8px;
+    height: 8px;
+    background: #00ff88; /* dtrader green */
+    border-radius: 50%;
+  }
+
+  /* Big follower ring */
+  .cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #00ff88;
+    border-radius: 50%;
+    transition: all 0.15s ease-out;
+  }
+
+  /* Hover effect on buttons/links */
+  .cursor-hover {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 255, 136, 0.2);
+    border: none;
+  }
+</style>
+
+<script>
+  const cursor = document.querySelector(".custom-cursor");
+  const follower = document.querySelector(".cursor-follower");
+  
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursor.style.left = mouseX + "px";
+    cursor.style.top = mouseY + "px";
+  });
+
+  // Smooth trailing effect
+  function animateFollower() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    follower.style.left = followerX + "px";
+    follower.style.top = followerY + "px";
+    requestAnimationFrame(animateFollower);
+  }
+  animateFollower();
+
+  // Hover effect for buttons, links, dtrader cards
+  const hoverElements = document.querySelectorAll("a, button, .btn, .trade-card, input");
+  hoverElements.forEach(el => {
+    el.addEventListener("mouseenter", () => follower.classList.add("cursor-hover"));
+    el.addEventListener("mouseleave", () => follower.classList.remove("cursor-hover"));
+  });
+</script>
+<!-- MOVING CURSOR END -->
 
 ## Quick Start
 
